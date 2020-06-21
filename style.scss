@@ -8,15 +8,20 @@ $color-black-33: #00000044;
     font-family: 微軟正黑體;
 }
 
+body {
+    background-image: url(./img/tilespaper.jpg);
+    background-size: 300px;
+}
+
 nav {
     display: grid;
     grid-template-columns: 20% 50% 15% 15%;
-    padding: 30px 5px;
+    padding: 30px 40px;
     align-items: baseline;
     position: fixed;
     z-index: 1;
     background: #ffffff55;
-    width: 100vw;
+    width: 100%;
     border-bottom: 1px solid $color-black-33;
     
     #logo {
@@ -27,6 +32,7 @@ nav {
     a {
         text-decoration: none;
         color: $color-black;
+        text-align: right;
     }
 }
 
@@ -34,5 +40,31 @@ nav {
     img {
         height: 100vh;
         object-fit: cover;
+    }
+}
+
+@mixin section-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    img {
+        width: 100%;
+    }
+}
+
+#about {
+    @include section-box();
+}
+
+#product {
+    @include section-box();
+
+    grid-template-areas: "text pic";
+
+    *:nth-child(1){
+        grid-area: pic;
+    }
+    *:nth-child(2){
+        grid-area: text;
     }
 }
