@@ -1,3 +1,5 @@
+AOS.init();
+
 $('#banner').slick({
     autoplay: true,
     autoplaySpeed: 1000,
@@ -11,5 +13,5 @@ $('#brand').slick({
     autoplaySpeed: 1000,
     dots: true,
     arrows: false,
-    variableWidth: true
+    variableWidth: true,
 });

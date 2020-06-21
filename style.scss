@@ -44,11 +44,21 @@ nav {
 }
 
 @mixin section-box {
+    // 溢出：隱藏 - 超出此元素範圍外的內容皆隱藏
+    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
     img {
         width: 100%;
+    }
+
+    div {
+        padding-top: 300px;
+
+        p {
+            padding: 50px 0;
+        }
     }
 }
 
@@ -66,6 +76,7 @@ nav {
     }
     *:nth-child(2){
         grid-area: text;
+        text-align: right;
     }
 }
 
@@ -81,6 +92,6 @@ nav {
 footer {
     text-align: center;
     margin-top: 100px;
-    padding: 30px 0;
+    padding: 80px 0;
     color: $color-black-33;
 }
